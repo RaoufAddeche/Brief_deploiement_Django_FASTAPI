@@ -1,0 +1,16 @@
+uvicorn
+fastapi
+alembic 
+sqlmodel
+passlib
+pandas
+scikit-learn
+pyjwt
+argon2-cffi
+pydantic
+pydantic_settings
+python-jose
+shap
+matplotlib
+catboost
+pydantic[email]
