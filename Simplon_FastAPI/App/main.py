@@ -2,6 +2,11 @@
 from fastapi import FastAPI
 from App.database.database import create_db_and_tables
 from App.routes import loans, admin, auth
+from dotenv import load_dotenv
+
+
+
+load_dotenv()
 
 app = FastAPI()
 

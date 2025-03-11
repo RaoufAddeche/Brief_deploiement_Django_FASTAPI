@@ -6,6 +6,7 @@ Create Date: ${create_date}
 
 """
 from typing import Sequence, Union
+import sqlmodel
 
 from alembic import op
 import sqlalchemy as sa
@@ -19,8 +20,10 @@ depends_on: Union[str, Sequence[str], None] = ${repr(depends_on)}
 
 
 def upgrade() -> None:
+    """Upgrade schema."""
     ${upgrades if upgrades else "pass"}
 
 
 def downgrade() -> None:
+    """Downgrade schema."""
     ${downgrades if downgrades else "pass"}
