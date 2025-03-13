@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4%tz@cgg0=mtecbkr1@^$$n&$)#$9$m1_y94akyu$n7)9ljqk-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 # Custom user model
 # AUTH_USER_MODEL = 'user.User'
@@ -93,15 +93,47 @@ ASGI_APPLICATION = 'Bamk.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'trustservercertificate': 'yes',
+            'encrypt': 'yes',
+            'connection_timeout': 30
+        },
     }
 }
+print(DATABASES)
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 # Configuration pour l'API FastAPI
-FASTAPI_BASE_URL = "http://localhost:8000"  # Adapte l'URL selon ton environnement
+FASTAPI_BASE_URL = "http://raddechefastapi.francecentral.azurecontainer.io:8000"  # Adapte l'URL selon ton environnement
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

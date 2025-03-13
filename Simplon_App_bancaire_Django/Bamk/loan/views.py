@@ -26,8 +26,8 @@ PASSWORD = "password123"
 #     return render(request, "loan/connection_status.html", {"message": message})
 
 # URLs de l'API
-API_LOGIN_URL = "http://127.0.0.1:8000/auth/login"
-API_PREDICT_URL = "http://127.0.0.1:8000/loans/request"
+API_LOGIN_URL = "http://raddechefastapi.francecentral.azurecontainer.io:8000/auth/login"
+API_PREDICT_URL = "http://raddechefastapi.francecentral.azurecontainer.io:8000/loans/request"
 
 # @login_required
 # def loan_request_view(request):
@@ -191,7 +191,7 @@ def loan_request_view(request):
                     loan_request.status = LoanStatus.AI_REJECTED  # Rejeté par l'IA
 
                 loan_request.save()
-                return render(request, "loan/result.html", {"prediction": prediction_values["eligible"], "shap_plot":prediction_values["shap_plot"] })
+                return render(request, "loan/result.html", {"prediction": prediction_values["eligible"]})
             else:
                 messages.error(request, "Erreur lors de la prédiction")
                 return render(request, "loan/error.html", {"error": "Erreur API"})
@@ -200,3 +200,5 @@ def loan_request_view(request):
         form = LoanRequestForm()
 
     return render(request, "loan/form.html", {"form": form})
+
+# "shap_plot":prediction_values["shap_plot"]

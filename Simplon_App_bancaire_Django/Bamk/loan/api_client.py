@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = "http://raddechefastapi.francecentral.azurecontainer.io:8000"
 LOGIN_ENDPOINT = "/auth/login"
 
 def get_auth_token(email, password):
