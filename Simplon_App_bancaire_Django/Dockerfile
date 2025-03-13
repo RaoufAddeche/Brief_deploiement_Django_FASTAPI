@@ -10,12 +10,6 @@ WORKDIR /app
 COPY install_sql_driver.sh install_sql_driver.sh
 RUN chmod +x ./install_sql_driver.sh && ./install_sql_driver.sh
 
-# # Install system dependencies, including ODBC libraries
-# RUN apt-get update && apt-get install -y \
-#   unixodbc \
-#   unixodbc-dev \
-#   && rm -rf /var/lib/apt/lists/*
-
 # Copy requirements and install Python dependencies
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
