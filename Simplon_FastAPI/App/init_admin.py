@@ -2,33 +2,6 @@ from sqlmodel import Session, select
 from database.database import engine
 from models.user import User
 from passlib.context import CryptContext
-
-# # Initialisation du contexte de hashage
-# pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-# # Détails de l'admin
-# ADMIN_EMAIL = "admin@example.com"
-# ADMIN_PASSWORD = "MonSuperMotDePasse123"
-
-# def create_admin():
-#     with Session(engine) as session:
-#         # Vérifie si l'admin existe déjà
-#         existing_admin = session.exec(select(User).where(User.email == ADMIN_EMAIL)).first()
-#         if existing_admin:
-#             print("⚠ Admin existe déjà !")
-#             return
-        
-#         # Création du hash du mot de passe
-#         hashed_password = pwd_context.hash(ADMIN_PASSWORD)
-
-#         # Création de l'utilisateur admin
-#         admin = User(email=ADMIN_EMAIL, password=hashed_password, role="admin", is_active=True)
-#         session.add(admin)
-#         session.commit()
-#         print("✅ Admin ajouté avec succès !")
-
-# if __name__ == "__main__":
-#     create_admin()
 from sqlmodel import Field, Session, SQLModel, create_engine
 from passlib.context import CryptContext
 from sqlalchemy.exc import IntegrityError

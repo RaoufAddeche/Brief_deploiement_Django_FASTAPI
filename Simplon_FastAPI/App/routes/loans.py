@@ -16,8 +16,6 @@ import base64
 
 
 router = APIRouter(prefix="/loans", tags=["Loans"])
-# Charger le modèle une seule fois au démarrage
-#MODEL_PATH = os.path.join(os.path.dirname(__file__), "loan_model.pkl")
 
 with open("App/models/loan_model.pkl", "rb") as f:
     model = pickle.load(f)
