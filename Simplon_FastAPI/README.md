@@ -51,7 +51,7 @@ Follow these steps to execute the project:
 2. Clone this repository to your local machine:
 
 ```bash
-    git clone https://github.com/username/loan-prediction-api.git
+    git clone https://github.com/RaoufAddeche/loan-prediction-api.git
 ```
 3. Navigate to the project directory:
 
