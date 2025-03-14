@@ -61,7 +61,7 @@ Follow these steps to execute the project:
 2. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/Khadaassi/Simplon_App_bancaire_Django.git
+    git clone https://github.com/RaoufAddeche/Simplon_App_bancaire_Django.git
     ```
 
 3. Navigate to the project directory:
@@ -94,7 +94,7 @@ Follow these steps to execute the project:
     daphne -b localhost -p 8080 Bamk.asgi:application
     ```
 
-8. Access the application in your browser at `http://127.0.0.1:8000/`.
+8. Access the application in your browser at `http://127.0.0.1:8080/`.
 
 #### OR
 
@@ -104,7 +104,7 @@ Run the project using Docker:
 2. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/Khadaassi/Simplon_App_bancaire_Django.git
+    git clone https://github.com/RaoufAddeche/Simplon_App_bancaire_Django.git
     ```
 
 3. Navigate to the project directory:
@@ -119,8 +119,8 @@ Run the project using Docker:
 
 Deploy to Azure using Bash script:
 
-    chmod +x script.sh
-    ./script.sh
+    chmod +x deploy.sh
+    ./deploy.sh
 
 
 ---
