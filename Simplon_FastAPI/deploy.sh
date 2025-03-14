@@ -46,8 +46,8 @@ az container create \
     --name $CONTAINER_NAME \
     --image $ACR_NAME.azurecr.io/$IMAGE_NAME:latest \
     --dns-name-label raddechefastapi \
-    --cpu 2 \
-    --memory 4 \
+    --cpu 3 \
+    --memory 8 \
     --ip-address public \
     --ports 8000 \
     --environment-variables SECRET_KEY=$SECRET_KEY DATABASE_URL=$DATABASE_URL ACCESS_TOKEN_EXPIRE_MINUTES=$ACCESS_TOKEN_EXPIRE_MINUTES ALGORITHM=$ALGORITHM MODEL_PATH=$MODEL_PATH \

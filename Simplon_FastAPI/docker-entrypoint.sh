@@ -17,7 +17,7 @@ import sys
 
 db_url = os.getenv('DATABASE_URL')
 max_retries = 30
-retry_interval = 2
+retry_interval = 3
 
 for i in range(max_retries):
     try:
@@ -34,8 +34,8 @@ sys.exit(1)
 "
 
 # Appliquer les migrations Alembic
-echo "Applying database migrations..."
-alembic upgrade head
+# echo "Applying database migrations..."
+# alembic upgrade head
 
 # Lancer l'application avec Gunicorn
 echo "Starting FastAPI application..."
