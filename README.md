@@ -1,6 +1,6 @@
 # <p align="center">Django Banking Application</p>
 <p align="center">
-    <img src="[Bamk/theme/static/images/project_logo.png](https://github.com/Khadaassi/Simplon_App_bancaire_Django/blob/develop_Khadija/Bamk/theme/static/images/project_logo.png)" alt="Project Logo" width=auto>
+    <img src="Bamk/theme/static/images/project_logo.png](https://github.com/Khadaassi/Simplon_App_bancaire_Django/blob/develop_Khadija/Bamk/theme/static/images/project_logo.png" alt="Project Logo" width=auto>
 </p>
 
 ## Description
